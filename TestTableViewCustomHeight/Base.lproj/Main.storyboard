@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestTableViewCustomHeight" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,117 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isr-bw-Lyp">
+                                <rect key="frame" x="388" y="285" width="80" height="30"/>
+                                <state key="normal" title="Show Menu"/>
+                                <connections>
+                                    <segue destination="Ujn-HX-MiJ" kind="presentation" identifier="ShowMenuViewController" id="lyL-fh-qMX"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="0Ce-TG-7fO">
+                                <rect key="frame" x="253" y="285" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changeMessagesCount:" destination="BYZ-38-t0r" eventType="valueChanged" id="APu-J3-MTz"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qF3-TJ-ZoJ">
+                                <rect key="frame" x="296" y="248.5" width="8" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjk-Hi-A86">
+                                <rect key="frame" x="161.5" y="249" width="124.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Isr-bw-Lyp" firstAttribute="leading" secondItem="0Ce-TG-7fO" secondAttribute="trailing" constant="41" id="81T-7c-sVO"/>
+                            <constraint firstItem="qF3-TJ-ZoJ" firstAttribute="centerX" secondItem="0Ce-TG-7fO" secondAttribute="centerX" id="OXl-5K-k5a"/>
+                            <constraint firstItem="Isr-bw-Lyp" firstAttribute="centerY" secondItem="0Ce-TG-7fO" secondAttribute="centerY" id="TCJ-Uz-eTK"/>
+                            <constraint firstItem="0Ce-TG-7fO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bSw-TV-xsg"/>
+                            <constraint firstItem="qF3-TJ-ZoJ" firstAttribute="leading" secondItem="tjk-Hi-A86" secondAttribute="trailing" constant="10" id="c4O-K9-Lb2"/>
+                            <constraint firstItem="0Ce-TG-7fO" firstAttribute="top" secondItem="qF3-TJ-ZoJ" secondAttribute="bottom" constant="16.5" id="nHq-JD-axq"/>
+                            <constraint firstItem="0Ce-TG-7fO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pSz-6b-3jk"/>
+                            <constraint firstItem="tjk-Hi-A86" firstAttribute="centerY" secondItem="qF3-TJ-ZoJ" secondAttribute="centerY" id="sfb-sb-ZQh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messagesCountLabel" destination="qF3-TJ-ZoJ" id="kBo-6U-eld"/>
+                        <outlet property="messagesCountStepper" destination="0Ce-TG-7fO" id="OoI-fe-2hG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="209" y="371"/>
+        </scene>
+        <!--Chat Message Templates View Controller-->
+        <scene sceneID="hmM-PR-wox">
+            <objects>
+                <tableViewController id="Ujn-HX-MiJ" customClass="ChatMessageTemplatesViewController" customModule="TestTableViewCustomHeight" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" id="EU8-zl-cFT" customClass="ChatMessageTemplatesTableView" customModule="TestTableViewCustomHeight" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="P3x-cf-nOB">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是你们第一次聊天, 请选择您需要发送的内容" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyR-CH-upw">
+                                    <rect key="frame" x="15" y="15" width="570" height="59"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.95294117649999999" green="0.59215686270000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="ZyR-CH-upw" firstAttribute="leading" secondItem="P3x-cf-nOB" secondAttribute="leading" priority="750" constant="15" id="6q0-bD-KD8"/>
+                                <constraint firstAttribute="trailing" secondItem="ZyR-CH-upw" secondAttribute="trailing" priority="750" constant="15" id="LAU-j8-hed"/>
+                                <constraint firstItem="ZyR-CH-upw" firstAttribute="top" secondItem="P3x-cf-nOB" secondAttribute="top" priority="750" constant="15" id="MCk-0G-MjP"/>
+                                <constraint firstAttribute="bottom" secondItem="ZyR-CH-upw" secondAttribute="bottom" priority="750" constant="15" id="Zmt-ch-CGs"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="86" id="MFd-Jt-umh" customClass="ChatMessageTemplatesCell" customModule="TestTableViewCustomHeight" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="117" width="600" height="86"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MFd-Jt-umh" id="QL5-LN-ZdZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="85.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1N-IX-cb1">
+                                            <rect key="frame" x="15" y="15" width="570" height="56"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="W1N-IX-cb1" firstAttribute="leading" secondItem="QL5-LN-ZdZ" secondAttribute="leading" priority="750" constant="15" id="LIy-ng-uGa"/>
+                                        <constraint firstAttribute="bottom" secondItem="W1N-IX-cb1" secondAttribute="bottom" priority="750" constant="15" id="SPq-N7-aFD"/>
+                                        <constraint firstAttribute="trailing" secondItem="W1N-IX-cb1" secondAttribute="trailing" priority="750" constant="15" id="Z4c-zX-P17"/>
+                                        <constraint firstItem="W1N-IX-cb1" firstAttribute="top" secondItem="QL5-LN-ZdZ" secondAttribute="top" priority="750" constant="15" id="opT-0Q-cQa"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="messageLabel" destination="W1N-IX-cb1" id="aFl-JW-OoF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ujn-HX-MiJ" id="u1C-7a-d3K"/>
+                            <outlet property="delegate" destination="Ujn-HX-MiJ" id="mTt-lO-xNs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0q0-NO-fum" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971" y="373"/>
         </scene>
     </scenes>
 </document>

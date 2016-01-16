@@ -14,6 +14,10 @@
 		61783BCD1C489D6800438460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61783BCB1C489D6800438460 /* LaunchScreen.storyboard */; };
 		61783BD81C489D6800438460 /* TestTableViewCustomHeightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61783BD71C489D6800438460 /* TestTableViewCustomHeightTests.swift */; };
 		61783BE31C489D6800438460 /* TestTableViewCustomHeightUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61783BE21C489D6800438460 /* TestTableViewCustomHeightUITests.swift */; };
+		61783BF11C489DD700438460 /* ChatMessageTemplatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61783BF01C489DD700438460 /* ChatMessageTemplatesViewController.swift */; };
+		61783BF41C48AFBC00438460 /* ChatMessageTemplatesPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61783BF31C48AFBC00438460 /* ChatMessageTemplatesPresentationAnimator.swift */; };
+		61783BF61C48B05300438460 /* ChatMessageTemplatesPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61783BF51C48B05300438460 /* ChatMessageTemplatesPresentationController.swift */; };
+		61E0C6E11C4A01D100021D8C /* QuickCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E0C6E01C4A01D100021D8C /* QuickCheck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		61783BDE1C489D6800438460 /* TestTableViewCustomHeightUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTableViewCustomHeightUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61783BE21C489D6800438460 /* TestTableViewCustomHeightUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCustomHeightUITests.swift; sourceTree = "<group>"; };
 		61783BE41C489D6800438460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61783BF01C489DD700438460 /* ChatMessageTemplatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTemplatesViewController.swift; sourceTree = "<group>"; };
+		61783BF31C48AFBC00438460 /* ChatMessageTemplatesPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTemplatesPresentationAnimator.swift; sourceTree = "<group>"; };
+		61783BF51C48B05300438460 /* ChatMessageTemplatesPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageTemplatesPresentationController.swift; sourceTree = "<group>"; };
+		61E0C6E01C4A01D100021D8C /* QuickCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickCheck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,10 @@
 		61783BC11C489D6800438460 /* TestTableViewCustomHeight */ = {
 			isa = PBXGroup;
 			children = (
-				61783BC21C489D6800438460 /* AppDelegate.swift */,
 				61783BC41C489D6800438460 /* ViewController.swift */,
+				61E0C6DF1C49FE4000021D8C /* ChatMessageTemplates */,
 				61783BC61C489D6800438460 /* Main.storyboard */,
-				61783BC91C489D6800438460 /* Assets.xcassets */,
-				61783BCB1C489D6800438460 /* LaunchScreen.storyboard */,
-				61783BCE1C489D6800438460 /* Info.plist */,
+				61783BF21C489DEA00438460 /* Supporting Files */,
 			);
 			path = TestTableViewCustomHeight;
 			sourceTree = "<group>";
@@ -123,6 +129,28 @@
 				61783BE41C489D6800438460 /* Info.plist */,
 			);
 			path = TestTableViewCustomHeightUITests;
+			sourceTree = "<group>";
+		};
+		61783BF21C489DEA00438460 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				61783BC21C489D6800438460 /* AppDelegate.swift */,
+				61783BC91C489D6800438460 /* Assets.xcassets */,
+				61783BCB1C489D6800438460 /* LaunchScreen.storyboard */,
+				61783BCE1C489D6800438460 /* Info.plist */,
+				61E0C6E01C4A01D100021D8C /* QuickCheck.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		61E0C6DF1C49FE4000021D8C /* ChatMessageTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				61783BF01C489DD700438460 /* ChatMessageTemplatesViewController.swift */,
+				61783BF31C48AFBC00438460 /* ChatMessageTemplatesPresentationAnimator.swift */,
+				61783BF51C48B05300438460 /* ChatMessageTemplatesPresentationController.swift */,
+			);
+			name = ChatMessageTemplates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61E0C6E11C4A01D100021D8C /* QuickCheck.swift in Sources */,
+				61783BF41C48AFBC00438460 /* ChatMessageTemplatesPresentationAnimator.swift in Sources */,
+				61783BF61C48B05300438460 /* ChatMessageTemplatesPresentationController.swift in Sources */,
 				61783BC51C489D6800438460 /* ViewController.swift in Sources */,
+				61783BF11C489DD700438460 /* ChatMessageTemplatesViewController.swift in Sources */,
 				61783BC31C489D6800438460 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +432,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestTableViewCustomHeight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.redesignapp.ios.demo.TestTableViewCustomHeight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestTableViewCustomHeight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.redesignapp.ios.demo.TestTableViewCustomHeight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -484,6 +518,7 @@
 				61783BE91C489D6800438460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61783BEA1C489D6800438460 /* Build configuration list for PBXNativeTarget "TestTableViewCustomHeightTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +527,7 @@
 				61783BEC1C489D6800438460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61783BED1C489D6800438460 /* Build configuration list for PBXNativeTarget "TestTableViewCustomHeightUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +536,7 @@
 				61783BEF1C489D6800438460 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,17 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var messagesCountStepper: UIStepper!
+    
+    @IBOutlet weak var messagesCountLabel: UILabel!
+    @IBAction func changeMessagesCount(sender: UIStepper) {
+        messagesCountLabel.text = "\(Int(sender.value))"
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let des = segue.destinationViewController as? ChatMessageTemplatesViewController {
+            var messages: [String] = []
+            for _ in 0..<Int(messagesCountStepper.value) {
+                messages.append(String.arbitrary())
+            }
+            des.messages = messages
+        }
     }
-
-
 }
 
