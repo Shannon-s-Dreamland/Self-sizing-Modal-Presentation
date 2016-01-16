@@ -1,5 +1,5 @@
 
-# Self-sizing Model View Controller
+# Self-sizing Modal View Controller
 
 ![screenshot](screenshots/screenshoot.gif)
 
